@@ -1,7 +1,11 @@
-fun <%- createTransitions[0].name %> (ownerAddr : &signer)
+fun <%- createTransitions[0].name %> () acquires <%- name %>_res<%if (createTransitions[0].tags != '') {%>, <%- createTransitions[0].tags %> <% } %>
 {
-    move_to<<%- name %>_res>(ownerAddr, <%- name %>_res {
+    move_to<<%- name %>_res>(&sign(self()), <%- name %>_res {
         currState: b"<%- states[0].name %>"
     });
 
+    <%if (createTransitions[0].statements != '') {%>
+    //Actions
+    <%- createTransitions[0].statements %> 
+    <% } %>
 }

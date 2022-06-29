@@ -19,10 +19,17 @@ define([], function () {
           actionName = action.replace(/\s/g, '') // all comparisons will be whitespace-agnostic
           transitions = []
           for (transition of model.transitions) { // for each transition, check if it matches the action specification
+            // if(transition['actionName']!= undefined){
+            //   console.log('1 '+transition['actionName'].replace(/[;\s]+/g,""))
+            //   console.log('2 '+actionName)
+            //   console.log(transition.actionName.replace(/[;\s]+/g, '') === actionName)
+            //   console.log(transition.actionName.replace(/[;\s]+/g, '') == actionName)
+            // }
             if (transition.actionName !== undefined && transition.actionName.replace(/[;\s]+/g, '') === actionName) {
               transitions.push(transition.actionName)
             }
           }
+          //console.log(transitions)
           if (transitions.length !== 1) { // action specification is ambiguous since multiple transitions match it
             if (transitions.length === 0) {
               throw new Error('Could not find action: ' + action + ' Possible reason: Statement was specified without function name.')

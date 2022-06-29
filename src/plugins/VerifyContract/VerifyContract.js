@@ -289,6 +289,7 @@ define([
     let actionNamesToTransitionNames = {}
     let bipTransitionsToSMVNames = {}
 
+    //console.log(model.transitions);
     actionNamesToTransitionNames = VerifyContract.prototype.actionNamesToTransitions.call(self, model.transitions, actionNamesToTransitionNames)
     bipTransitionsToSMVNames = VerifyContract.prototype.BIPTransitionSMVNames.call(self, fs, path, model)
 
