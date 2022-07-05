@@ -22,7 +22,7 @@ Install the following:
 
 1. Clone the repository: 
 ``` 
-git clone https://github.com/fcpranav/move-smart-contracts.git
+git clone https://github.com/ekeilty17/move-smart-contracts
 ```
 
 2. Install the necessary packages: 
