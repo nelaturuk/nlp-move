@@ -5,8 +5,9 @@ const WrapperPlugin = require('wrapper-webpack-plugin')
 
 module.exports = {
   entry: {
-    moveCodeEditor: './src/visualizers/panels/MoveCodeEditor/src/index.jsx',
-    verificationProperties: './src/visualizers/panels/VerificationProperties/src/index.jsx'
+    //moveCodeEditor: './src/visualizers/panels/MoveCodeEditor/src/index.jsx',
+    //verificationProperties: './src/visualizers/panels/VerificationProperties/src/index.jsx',
+    MovePrompt: './src/visualizers/panels/MovePrompt/src/index.jsx'
   },
   output: {
     filename: '[name].reactViz.bundle.js',
@@ -24,9 +25,12 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader'
-        ]
+        use: {
+          loader: "babel-loader",
+          options: {
+                    presets: ["@babel/preset-env"]
+          }
+        }
       }
     ]
   },

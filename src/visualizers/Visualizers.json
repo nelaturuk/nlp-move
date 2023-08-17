@@ -1,5 +1,11 @@
 [
   {
+    "id": "MovePrompt",
+    "title": "Move Prompt",
+    "panel": "panels/MovePrompt/MovePromptPanel",
+    "DEBUG_ONLY": false
+  },
+  {
     "id": "MoveCodeEditor",
     "title": "Move Code Editor",
     "panel": "panels/MoveCodeEditor/MoveCodeEditorPanel",
